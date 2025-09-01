@@ -9,63 +9,58 @@ const About = () => {
 
   const executives = [
     {
-      name: "Alex Chen",
+      name: "Mehr Anand",
       title: "President",
-      bio: "Computer Science major passionate about democratizing AI access. Led multiple AI workshops and hackathons at Northeastern.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      bio: "Anthropic Ambassador | ML Engineer @ Brewster | T4T CTO | AINU Operations Director | 5X Hackathon Winner ",
+      image: "https://media.licdn.com/dms/image/v2/D4E35AQFROZLavMULtg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1719438529114?e=1757314800&v=beta&t=IGxXXb7WFy8R9Ov6iSgCL5MNn_t_3EdWyGazy9OcY3s",
       socials: {
-        linkedin: "https://linkedin.com/in/alexchen",
-        github: "https://github.com/alexchen",
-        portfolio: "https://alexchen.dev"
+        linkedin: "https://www.linkedin.com/in/mehr-anand/",
+        github: "https://github.com/mesanand",
+        portfolio: "https://mesanand.github.io/"
       }
     },
     {
-      name: "Sarah Kim",
+      name: "Abhishek Pujara",
       title: "Vice President",
-      bio: "Data Science enthusiast with expertise in machine learning. Organized the largest AI conference in Northeastern's history.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+      bio: "SWE Intern @ Fresenius Kabi | Perplexity Campus Ambassador | CS+Math @ Northeastern",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQH8D7UY18T-AQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1706481612626?e=1759363200&v=beta&t=0DhuF8wBBUhNiCyR-6O0EUmD5TLJQoxLZZFn_qBEluI",
       socials: {
-        linkedin: "https://linkedin.com/in/sarahkim",
-        github: "https://github.com/sarahkim",
-        portfolio: "https://sarahkim.dev"
+        linkedin: "https://www.linkedin.com/in/abhishek-pujara/",
       }
     },
     {
-      name: "Marcus Rodriguez",
+      name: "Aaron Devadas",
       title: "Treasurer",
-      bio: "Business major with a passion for AI entrepreneurship. Manages club finances and sponsorships for events.",
+      bio: "Finance Intern at SIG SAUER | prev. Sponsorship Lead @ NER",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
       socials: {
-        linkedin: "https://linkedin.com/in/marcusrodriguez",
-        github: "https://github.com/marcusrodriguez"
+        linkedin: "https://www.linkedin.com/in/aarondevadas/",
       }
     },
     {
-      name: "Priya Patel",
-      title: "Secretary",
-      bio: "Computer Engineering student focused on AI ethics and responsible development. Coordinates club communications and events.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      name: "Shourya Yadav",
+      title: "Director of Operations",
+      bio: "AI @ SNAP Life Sciences | Project Lead @ Forge | Operations @ Claude Northeastern",
+      image: "https://media.licdn.com/dms/image/v2/D5635AQEFlJqU8i7Szg/profile-framedphoto-shrink_200_200/B56ZfKu52dG0AA-/0/1751452983116?e=1757314800&v=beta&t=Wms1mqGN7_WHicy5glqM9cDMnIMZPFWQioMjB_AMUac",
       socials: {
-        linkedin: "https://linkedin.com/in/priyapatel",
-        github: "https://github.com/priyapatel",
-        portfolio: "https://priyapatel.dev"
+        linkedin: "https://www.linkedin.com/in/shouryadav/",
+        github: "https://github.com/shourya0523",
       }
     },
     {
-      name: "David Thompson",
-      title: "Events Coordinator",
-      bio: "Information Systems major specializing in AI applications. Plans and executes all club events and workshops.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+      name: "Shreyash Sinha",
+      title: "Director of Media",
+      bio: "Claude Campus Ambassador | Equity Research @ Stanton | Junior Investment Analysts @ NUImpact | Prev. Product Management @ Hydrow",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQHK6wygnTanMg/profile-displayphoto-shrink_200_200/B4DZVFhUsQHAAY-/0/1740628118893?e=1759363200&v=beta&t=tTCj5TyPKgkPDC8BjsQ370F5XAaxKueWHzopZsM0S8Y",
       socials: {
-        linkedin: "https://linkedin.com/in/davidthompson",
-        github: "https://github.com/davidthompson"
+        linkedin: "https://www.linkedin.com/in/shreyash-sinha/",
       }
     },
     {
-      name: "Emma Wilson",
-      title: "Outreach Director",
-      bio: "Computer Science major focused on building partnerships with industry leaders and expanding the club's network.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+      name: "Zachary Blum",
+      title: "National Fundraising Director",
+      bio: "Prev. Financial Planning @ Alnylam | Prev. Sales/Corporate Inter @ Brennan | Fintech @ NEU | T4T Head of Fundraising",
+      image: "https://media.licdn.com/dms/image/v2/C4D03AQEQfv0kyhevcw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1655470383328?e=1759363200&v=beta&t=SaUByRFSYIr9V7FQNbJTXSzcrB_jxtFe_hPDdSKeXgc",
       socials: {
         linkedin: "https://linkedin.com/in/emmawilson",
         github: "https://github.com/emmawilson",
