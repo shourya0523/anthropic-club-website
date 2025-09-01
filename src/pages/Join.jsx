@@ -7,7 +7,7 @@ const Join = () => {
   const [iframeError, setIframeError] = useState(false);
 
   // Google Form URL - Replace with your actual form URL
-  const googleFormUrl = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSexyQmwKJfnUdZou6_6o3bC4kH-ieS95pjV_9W-X3C0JLbjJw/viewform?embedded=true;"
 
   useEffect(() => {
     // Simulate iframe loading
