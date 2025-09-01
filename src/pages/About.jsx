@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Card from '../components/Card';
+import aaronImage from '../assets/aaron devades.jpg';
 
 const About = () => {
   const ref = useRef(null);
@@ -32,7 +33,7 @@ const About = () => {
       name: "Aaron Devadas",
       title: "Treasurer",
       bio: "Finance Intern at SIG SAUER | prev. Sponsorship Lead @ NER",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      image: aaronImage,
       socials: {
         linkedin: "https://www.linkedin.com/in/aarondevadas/",
       }
