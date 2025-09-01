@@ -24,7 +24,7 @@ const Home = () => {
     {
       icon: "🤖",
       title: "Free Claude Pro Account & API credits",
-      description: "Get access to Claude Pro and API credits to build amazing AI applications"
+      description: "Get access to Claude Pro and $50 in API credits to implement your modern dreams"
     },
     {
       icon: "🎓",
@@ -39,7 +39,7 @@ const Home = () => {
     {
       icon: "🏆",
       title: "Exclusive hackathons and prizes",
-      description: "Compete in AI hackathons with amazing prizes and recognition"
+      description: "Compete in AI hackathons to win $18,000 in prizes this fall"
     }
   ];
 
