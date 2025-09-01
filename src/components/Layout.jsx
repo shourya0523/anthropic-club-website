@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import claudeLogo from '../assets/claude-logo-png_seeklogo-554534.png';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -23,9 +24,7 @@ const Layout = ({ children }) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-coral rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
+              <img src={claudeLogo} alt="Claude logo" className="w-8 h-8 rounded-lg object-contain" />
               <span className="text-xl font-bold text-charcoal">Claude Builder Club</span>
             </Link>
 
