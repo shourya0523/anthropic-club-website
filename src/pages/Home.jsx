@@ -492,6 +492,7 @@ const Home = () => {
           </motion.div>
         </div>
       </motion.section>
+
     </div>
   );
 };

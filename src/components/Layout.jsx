@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
               <div className="w-8 h-8 bg-coral rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
-              <span className="text-xl font-bold text-charcoal">Anthropic Club</span>
+              <span className="text-xl font-bold text-charcoal">Claude Builder Club</span>
             </Link>
 
             {/* Navigation */}
@@ -71,11 +71,51 @@ const Layout = ({ children }) => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-neutral-light">
-              © 2024 Anthropic Club at Northeastern University. All rights reserved.
-            </p>
-            <p className="text-sm text-neutral-dark mt-2">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <p className="text-neutral-light">
+                © 2024 Anthropic Club at Northeastern University. All rights reserved.
+              </p>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.linkedin.com/company/northeastern-anthropic-builders-club"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/60 text-white hover:bg-white hover:text-charcoal transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                    <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4.1 0 4.8 2.7 4.8 6.2V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9-2.4 0-2.8 1.9-2.8 3.8V24h-4V8z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://linktr.ee/claudeNortheastern"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Linktree"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/60 text-white hover:bg-white hover:text-charcoal transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22V7" />
+                    <path d="M5 14l7-7 7 7" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/claudeclub.nu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/60 text-white hover:bg-white hover:text-charcoal transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p className="text-sm text-neutral-dark">
               Building the future of AI, one student at a time.
             </p>
           </div>
