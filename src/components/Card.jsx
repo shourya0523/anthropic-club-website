@@ -65,7 +65,6 @@ const Card = ({
       whileHover={
         hover
           ? {
-              y: -8,
               boxShadow: colorGlow
                 ? "0 10px 30px -10px rgba(225, 123, 90, 0.5)"
                 : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",

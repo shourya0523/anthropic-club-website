@@ -362,12 +362,7 @@ const Home = () => {
             Northeastern University.
           </motion.p>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/join">
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -376,7 +371,7 @@ const Home = () => {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="bg-white text-coral hover:bg-neutral-light"
+                  className="bg-white text-coral hover:bg-neutral-light hover:text-coral"
                 >
                   Join the Club
                 </Button>
@@ -396,7 +391,7 @@ const Home = () => {
                 </Button>
               </motion.div>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </motion.section>
 

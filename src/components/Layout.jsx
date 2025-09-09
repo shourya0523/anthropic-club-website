@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
 
             {/* Navigation */}
             <nav className="hidden md:flex space-x-8">
-              {navItems.map((item) => (
+              {navItems.slice(0, 2).map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
@@ -70,6 +70,12 @@ const Layout = ({ children }) => {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/join"
+                className="px-3 py-2 rounded-md text-sm font-medium bg-coral text-white hover:bg-coral/80"
+              >
+                Join Us
+              </Link>
             </nav>
 
             {/* Mobile menu button */}

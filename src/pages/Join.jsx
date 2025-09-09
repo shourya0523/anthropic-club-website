@@ -243,42 +243,53 @@ const Join = () => {
               Reach out to our team if you have any questions about the
               application process or club activities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:anthropic-club@northeastern.edu"
-                className="inline-flex items-center px-6 py-3 bg-coral text-white rounded-lg font-medium hover:bg-coral/90 transition-colors duration-200"
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <a
+                  href="mailto:anthropic-club@northeastern.edu"
+                  className="inline-flex items-center px-6 py-3 border-2 border-coral bg-coral text-white rounded-lg font-medium hover:bg-coral/90 transition-colors duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                Email Us
-              </a>
-              <a
-                href="https://join.slack.com/t/claudebuilder-vzb9586/shared_invite/zt-3cfiwxtb9-JRvaJqI5UaqCGV~mz4pbdg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border-2 border-coral text-coral rounded-lg font-medium hover:bg-coral hover:text-white transition-colors duration-200"
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  Email Us
+                </a>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
+                <a
+                  href="https://join.slack.com/t/claudebuilder-vzb9586/shared_invite/zt-3cfiwxtb9-JRvaJqI5UaqCGV~mz4pbdg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 border-2 border-coral text-coral rounded-lg font-medium hover:bg-coral hover:text-white transition-colors duration-200"
                 >
-                  <path d="M5.2 15.6a2.6 2.6 0 1 1-2.6-2.6h2.6v2.6zm1.3 0a2.6 2.6 0 1 1 5.2 0v6.5a2.6 2.6 0 1 1-5.2 0v-6.5zm2.6-9.1a2.6 2.6 0 1 1 2.6-2.6v2.6h-2.6zm0 1.3a2.6 2.6 0 1 1 0 5.2H2.6a2.6 2.6 0 1 1 0-5.2h6.5zm9.1 2.6a2.6 2.6 0 1 1 2.6 2.6h-2.6v-2.6zm-1.3 0a2.6 2.6 0 1 1-5.2 0V2.6a2.6 2.6 0 1 1 5.2 0v6.5zm-2.6 9.1a2.6 2.6 0 1 1-2.6 2.6v-2.6h2.6zm0-1.3a2.6 2.6 0 1 1 0-5.2h6.5a2.6 2.6 0 1 1 0 5.2h-6.5z" />
-                </svg>
-                Join Slack
-              </a>
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5.2 15.6a2.6 2.6 0 1 1-2.6-2.6h2.6v2.6zm1.3 0a2.6 2.6 0 1 1 5.2 0v6.5a2.6 2.6 0 1 1-5.2 0v-6.5zm2.6-9.1a2.6 2.6 0 1 1 2.6-2.6v2.6h-2.6zm0 1.3a2.6 2.6 0 1 1 0 5.2H2.6a2.6 2.6 0 1 1 0-5.2h6.5zm9.1 2.6a2.6 2.6 0 1 1 2.6 2.6h-2.6v-2.6zm-1.3 0a2.6 2.6 0 1 1-5.2 0V2.6a2.6 2.6 0 1 1 5.2 0v6.5zm-2.6 9.1a2.6 2.6 0 1 1-2.6 2.6v-2.6h2.6zm0-1.3a2.6 2.6 0 1 1 0-5.2h6.5a2.6 2.6 0 1 1 0 5.2h-6.5z" />
+                  </svg>
+                  Join Slack
+                </a>
+              </motion.div>
             </div>
           </Card>
         </motion.div>
