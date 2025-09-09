@@ -14,10 +14,8 @@ const Button = ({
 
   const variants = {
     primary: "bg-coral text-white hover:bg-coral/90 focus:ring-coral",
-    secondary:
-      "border-2 border-coral text-coral hover:bg-coral hover:text-white focus:ring-coral",
-    outline:
-      "border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white focus:ring-charcoal",
+    secondary: "border-2 text-coral focus:ring-coral",
+    outline: "border-2 border-charcoal text-charcoal focus:ring-charcoal",
   };
 
   const sizes = {
@@ -34,7 +32,6 @@ const Button = ({
       onClick={onClick}
       type={type}
       disabled={disabled}
-      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300, damping: 17 }}
     >
