@@ -3,13 +3,17 @@
 ## 🚀 Quick Fix Steps
 
 ### 1. Clear LinkedIn's Cache
+
 Visit [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and:
+
 1. Enter your website URL: `https://claudebuilders.com/`
 2. Click "Inspect"
 3. LinkedIn will fetch fresh metadata
 
 ### 2. Alternative: Force Refresh
+
 If the inspector doesn't work immediately, try sharing your link with a query parameter:
+
 - Instead of: `https://claudebuilders.com/`
 - Use: `https://claudebuilders.com/?v=2`
 
@@ -18,12 +22,14 @@ This tricks LinkedIn into treating it as a new URL.
 ## ✅ What We've Fixed
 
 ### Meta Tags Added:
+
 - **Open Graph tags** for Facebook/LinkedIn sharing
 - **Twitter Card tags** for Twitter previews
 - **Proper favicon** setup
 - **Theme colors** matching your brand
 
 ### Key Improvements:
+
 - ✅ Title: "Claude Builder Club | Northeastern University"
 - ✅ Description: Comprehensive club description
 - ✅ Image: Logo with proper dimensions
@@ -33,6 +39,7 @@ This tricks LinkedIn into treating it as a new URL.
 ## 🖼️ Preview Specifications
 
 **Image Requirements Met:**
+
 - ✅ Size: 512x512px
 - ✅ Format: PNG
 - ✅ Accessible URL: `/favicon.png`
@@ -41,11 +48,13 @@ This tricks LinkedIn into treating it as a new URL.
 ## 🔍 Testing Your Preview
 
 ### Test Tools:
+
 1. **Open Graph Checker**: https://opengraph.xyz/
 2. **LinkedIn Post Inspector**: https://www.linkedin.com/post-inspector/
 3. **Facebook Debugger**: https://developers.facebook.com/tools/debug/
 
 ### Browser Testing:
+
 ```bash
 # Test local preview
 curl -s https://claudebuilders.com/ | grep -i "og:"
@@ -61,6 +70,7 @@ curl -s https://claudebuilders.com/ | grep -i "og:"
 ## ⚡ Expected Results
 
 After clearing LinkedIn's cache, your link previews should show:
+
 - **Title**: Claude Builder Club | Northeastern University
 - **Description**: Join the Claude Builder Club at Northeastern University...
 - **Image**: Your Claude logo

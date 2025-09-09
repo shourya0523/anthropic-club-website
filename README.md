@@ -28,23 +28,26 @@ A modern, responsive website for the Anthropic Club featuring an introduction pa
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd anthropic-club-website
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -96,17 +99,20 @@ src/
 ## Design System
 
 ### Colors
+
 - **Primary**: Coral (#E17B5A) - Main brand color
 - **Secondary**: Charcoal (#2D2D2D) - Text and contrast
 - **Accent**: White (#FFFFFF) - Backgrounds and contrast
 - **Neutral**: Light and dark grays for subtle elements
 
 ### Typography
+
 - **Primary Font**: Space Grotesk - Modern geometric sans-serif
 - **Monospace**: JetBrains Mono - For code and technical elements
 - **Fluid Sizing**: Responsive typography that scales with viewport
 
 ### Animations
+
 - **Page Transitions**: Smooth fade and slide animations
 - **Micro-interactions**: Hover effects, button animations, card elevations
 - **Scroll Animations**: Reveal animations triggered by scroll position

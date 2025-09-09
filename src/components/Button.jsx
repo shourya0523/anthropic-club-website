@@ -1,30 +1,33 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'md', 
-  className = '', 
-  onClick, 
-  type = 'button',
-  disabled = false 
+const Button = ({
+  children,
+  variant = "primary",
+  size = "md",
+  className = "",
+  onClick,
+  type = "button",
+  disabled = false,
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
-  
+  const baseClasses =
+    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+
   const variants = {
-    primary: 'bg-coral text-white hover:bg-coral/90 focus:ring-coral',
-    secondary: 'border-2 border-coral text-coral hover:bg-coral hover:text-white focus:ring-coral',
-    outline: 'border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white focus:ring-charcoal',
+    primary: "bg-coral text-white hover:bg-coral/90 focus:ring-coral",
+    secondary:
+      "border-2 border-coral text-coral hover:bg-coral hover:text-white focus:ring-coral",
+    outline:
+      "border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white focus:ring-charcoal",
   };
-  
+
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: "px-4 py-2 text-sm",
+    md: "px-6 py-3 text-base",
+    lg: "px-8 py-4 text-lg",
   };
-  
+
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
-  
+
   return (
     <motion.button
       className={classes}
@@ -33,7 +36,7 @@ const Button = ({
       disabled={disabled}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 17 }}
+      transition={{ type: "spring", stiffness: 300, damping: 17 }}
     >
       {children}
     </motion.button>
