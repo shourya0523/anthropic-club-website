@@ -1,11 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-const LineArtBackground = ({ className = '' }) => {
+const LineArtBackground = ({ className = "" }) => {
   const lineCount = 12;
   const lines = Array.from({ length: lineCount });
 
   return (
-    <div className={`pointer-events-none absolute inset-0 ${className}`} aria-hidden="true">
+    <div
+      className={`pointer-events-none absolute inset-0 ${className}`}
+      aria-hidden="true"
+    >
       <motion.svg
         className="w-full h-full"
         viewBox="0 0 1000 1000"
@@ -29,7 +32,12 @@ const LineArtBackground = ({ className = '' }) => {
               strokeDasharray="8 12"
               initial={{ strokeDashoffset: 0, opacity: 0 }}
               animate={{ strokeDashoffset: [0, 200, 0], opacity: 1 }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: index * 0.2 }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: index * 0.2,
+              }}
             />
           );
         })}
@@ -39,5 +47,3 @@ const LineArtBackground = ({ className = '' }) => {
 };
 
 export default LineArtBackground;
-
-
