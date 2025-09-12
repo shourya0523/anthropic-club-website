@@ -28,12 +28,6 @@ const Home = () => {
 
   const benefits = [
     {
-      icon: "🤖",
-      title: "Free Claude Pro Account & API credits",
-      description:
-        "Get access to Claude Pro and $50 in API credits to implement your modern dreams",
-    },
-    {
       icon: "🎓",
       title: "Access to Anthropic workshops and lectures",
       description:
@@ -418,13 +412,51 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">
               Why Join the Club?
             </h2>
-            <p className="text-lg text-neutral-dark max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-dark max-w-2xl mx-auto mb-12">
               Discover the amazing benefits of being part of the Anthropic Club
               community
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Featured Benefit Banner */}
+          <motion.div
+            className="mb-16 max-w-4xl mx-auto"
+            variants={itemVariants}
+          >
+            <div className="relative bg-gradient-to-r from-coral to-coral/80 rounded-3xl p-8 md:p-12 text-center overflow-hidden shadow-2xl">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
+
+              <div className="relative z-10">
+                <motion.div
+                  className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6"
+                  whileHover={{ scale: 1.1, rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span className="text-4xl">🎁</span>
+                </motion.div>
+
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  FREE Claude Pro + $50 API Credits
+                </h3>
+
+                <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                  Unlock the full power of Claude Pro and receive $50 in API
+                  credits to bring your AI projects to life
+                </p>
+
+                <div className="mt-6 inline-flex items-center bg-white/20 rounded-full px-6 py-2">
+                  <span className="text-white font-semibold">
+                    🔥 Most Popular Benefit
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -443,7 +475,7 @@ const Home = () => {
                   hover
                 >
                   <motion.div
-                    className="w-16 h-16 bg-charcoal rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110"
+                    className="w-16 h-16 bg-charcoal rounded-full flex items-center justify-center mx-auto mb-6"
                     transition={{ duration: 0.3 }}
                   >
                     <motion.span
@@ -454,10 +486,12 @@ const Home = () => {
                       {benefit.icon}
                     </motion.span>
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-charcoal mb-3">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     {benefit.title}
                   </h3>
-                  <p className="text-neutral-dark">{benefit.description}</p>
+                  <p className="text-neutral-dark leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}
