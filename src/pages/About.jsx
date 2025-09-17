@@ -1,8 +1,15 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Card from "../components/Card";
 import aaronImage from "../assets/aaron devades.jpg";
+import mehrImage from "../assets/mehr_anand.jpg";
+import tarikaImage from "../assets/tarika_selvaraj.jpeg";
+import mattImage from "../assets/matt_wang.jpg";
+import zachImage from "../assets/zach_blum.png";
+import shreyashImage from "../assets/shreyash_sinha.png";
+import shouryaImage from "../assets/shourya_yadav.png";
+import simranImage from "../assets/simran_sethi.png";
+import smyanImage from "../assets/smyan_sengupta.png";
 
 const About = () => {
   const ref = useRef(null);
@@ -13,8 +20,8 @@ const About = () => {
       name: "Mehr Anand",
       title: "President",
       bio: "Anthropic Ambassador | ML Engineer @ Brewster | T4T CTO | AINU Operations Director | 5X Hackathon Winner ",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4E35AQFROZLavMULtg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1719438529114?e=1757314800&v=beta&t=IGxXXb7WFy8R9Ov6iSgCL5MNn_t_3EdWyGazy9OcY3s",
+      image: mehrImage,
+      badge: { text: "Claude Builder Ambassador", type: "builder" },
       socials: {
         linkedin: "https://www.linkedin.com/in/mehr-anand/",
         github: "https://github.com/mesanand",
@@ -32,6 +39,48 @@ const About = () => {
       },
     },
     {
+      name: "Matt Wang",
+      title: "Director of Technology",
+      bio: "Claude Builder Ambassador | CS @ Northeastern | Prev. SWE Intern @ DraftKings",
+      image: mattImage,
+      badge: { text: "Claude Builder Ambassador", type: "builder" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/mattrwang/",
+        github: "https://github.com/mattrwang",
+        portfolio: "https://www.mattrwang.com/",
+      },
+    },
+    {
+      name: "Tarika Selvaraj",
+      title: "Director of Growth",
+      bio: "Claude Ambassador @ Anthropic | Prev. AI and Digital Transformation @ BCG | Computer Engineering & Computer Science Student @ Northeastern University",
+      image: tarikaImage,
+      badge: { text: "Claude Builder Ambassador", type: "builder" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/tarika-selvaraj/",
+      },
+    },
+    {
+      name: "Shreyash Sinha",
+      title: "Director of Media",
+      bio: "Claude Campus Ambassador | Equity Research @ Stanton | Junior Investment Analysts @ NUImpact | Prev. Product Management @ Hydrow",
+      image: shreyashImage,
+      badge: { text: "Claude Campus Ambassador", type: "campus" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/shreyash-sinha/",
+      },
+    },
+    {
+      name: "Shourya Yadav",
+      title: "Director of Operations",
+      bio: "AI @ SNAP Life Sciences | Project Lead @ Forge | Operations @ Claude Northeastern",
+      image: shouryaImage,
+      socials: {
+        linkedin: "https://www.linkedin.com/in/shouryadav/",
+        github: "https://github.com/shourya0523",
+      },
+    },
+    {
       name: "Aaron Devadas",
       title: "Treasurer",
       bio: "Finance Intern at SIG SAUER | prev. Sponsorship Lead @ NER",
@@ -41,36 +90,31 @@ const About = () => {
       },
     },
     {
-      name: "Shourya Yadav",
-      title: "Director of Operations",
-      bio: "AI @ SNAP Life Sciences | Project Lead @ Forge | Operations @ Claude Northeastern",
-      image:
-        "https://media.licdn.com/dms/image/v2/D5635AQEFlJqU8i7Szg/profile-framedphoto-shrink_200_200/B56ZfKu52dG0AA-/0/1751452983116?e=1757314800&v=beta&t=Wms1mqGN7_WHicy5glqM9cDMnIMZPFWQioMjB_AMUac",
-      socials: {
-        linkedin: "https://www.linkedin.com/in/shouryadav/",
-        github: "https://github.com/shourya0523",
-      },
-    },
-    {
-      name: "Shreyash Sinha",
-      title: "Director of Media",
-      bio: "Claude Campus Ambassador | Equity Research @ Stanton | Junior Investment Analysts @ NUImpact | Prev. Product Management @ Hydrow",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHK6wygnTanMg/profile-displayphoto-shrink_200_200/B4DZVFhUsQHAAY-/0/1740628118893?e=1759363200&v=beta&t=tTCj5TyPKgkPDC8BjsQ370F5XAaxKueWHzopZsM0S8Y",
-      socials: {
-        linkedin: "https://www.linkedin.com/in/shreyash-sinha/",
-      },
-    },
-    {
       name: "Zachary Blum",
-      title: "National Fundraising Director",
+      title: "External Funding Head",
       bio: "Prev. Financial Planning @ Alnylam | Prev. Sales/Corporate Inter @ Brennan | Fintech @ NEU | T4T Head of Fundraising",
-      image:
-        "https://media.licdn.com/dms/image/v2/C4D03AQEQfv0kyhevcw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1655470383328?e=1759363200&v=beta&t=SaUByRFSYIr9V7FQNbJTXSzcrB_jxtFe_hPDdSKeXgc",
+      image: zachImage,
       socials: {
-        linkedin: "https://linkedin.com/in/emmawilson",
-        github: "https://github.com/emmawilson",
-        portfolio: "https://emmawilson.dev",
+        linkedin: "https://www.linkedin.com/in/zachary-blum-a15663242/",
+      },
+    },
+
+    {
+      name: "Simran Sethi",
+      title: "Growth Strategy Head",
+      bio: "Medical Liability Underwriting Co-op @ Coverys | B.S. Health Science Business Administration at Northeastern University",
+      image: simranImage,
+      socials: {
+        linkedin: "https://www.linkedin.com/in/simran-sethi-17a36632a/",
+      },
+    },
+    {
+      name: "Smyan Sengupta",
+      title: "Hackathon Head",
+      bio: "CS + AI @ Northeastern University | MSAT Modeling Co-op @ Pfizer",
+      image: smyanImage,
+      socials: {
+        linkedin: "https://www.linkedin.com/in/smyan-sengupta/",
       },
     },
   ];
@@ -92,6 +136,25 @@ const About = () => {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" },
     },
+  };
+
+  const Badge = ({ text, type = "builder" }) => {
+    const badgeStyles = {
+      builder: "bg-gradient-to-r from-coral to-orange-400 text-white",
+      campus: "bg-gradient-to-r from-blue-500 to-purple-600 text-white",
+    };
+
+    return (
+      <motion.div
+        className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${badgeStyles[type]} shadow-md`}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        whileHover={{ scale: 1.05 }}
+      >
+        {text}
+      </motion.div>
+    );
   };
 
   const SocialIcon = ({ type, url }) => {
@@ -188,7 +251,17 @@ const About = () => {
                 <h3 className="text-xl font-semibold text-charcoal mb-2">
                   {executive.name}
                 </h3>
-                <p className="text-coral font-medium mb-4">{executive.title}</p>
+                <p className="text-coral font-medium mb-3">{executive.title}</p>
+
+                {/* Badge */}
+                {executive.badge && (
+                  <div className="mb-4">
+                    <Badge
+                      text={executive.badge.text}
+                      type={executive.badge.type}
+                    />
+                  </div>
+                )}
 
                 {/* Bio */}
                 <p className="text-neutral-dark mb-6 leading-relaxed">
