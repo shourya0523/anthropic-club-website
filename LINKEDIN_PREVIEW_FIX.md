@@ -6,7 +6,7 @@
 
 Visit [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and:
 
-1. Enter your website URL: `https://claudebuildersneu.com/`
+1. Enter your website URL: `https://claudebuilders.com/`
 2. Click "Inspect"
 3. LinkedIn will fetch fresh metadata
 
@@ -14,8 +14,8 @@ Visit [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and:
 
 If the inspector doesn't work immediately, try sharing your link with a query parameter:
 
-- Instead of: `https://claudebuildersneu.com/`
-- Use: `https://claudebuildersneu.com/?v=2`
+- Instead of: `https://claudebuilders.com/`
+- Use: `https://claudebuilders.com/?v=2`
 
 This tricks LinkedIn into treating it as a new URL.
 
@@ -57,7 +57,7 @@ This tricks LinkedIn into treating it as a new URL.
 
 ```bash
 # Test local preview
-curl -s https://claudebuildersneu.com/ | grep -i "og:"
+curl -s https://claudebuilders.com/ | grep -i "og:"
 ```
 
 ## 📝 Deploy Checklist
