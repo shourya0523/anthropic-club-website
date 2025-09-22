@@ -262,7 +262,7 @@ const Layout = ({ children }) => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <p className="text-neutral-light">
-                © 2025 Anthropic Club at Northeastern University. All rights
+                © 2024 Anthropic Club at Northeastern University. All rights
                 reserved.
               </p>
               <div className="flex items-center gap-3">

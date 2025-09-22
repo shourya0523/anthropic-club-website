@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Card from "../components/Card";
-import SEO from "../components/SEO";
 import aaronImage from "../assets/aaron devades.jpg";
 import mehrImage from "../assets/mehr_anand.jpg";
 import tarikaImage from "../assets/tarika_selvaraj.jpeg";
@@ -202,125 +201,108 @@ const About = () => {
   };
 
   return (
-    <>
-      <SEO
-        title="About Us"
-        description="Meet the passionate team behind Claude Builder Club at Northeastern University. Learn about our executives, advisors, and mission to democratize AI education."
-        keywords={[
-          "team",
-          "executives",
-          "leadership",
-          "northeastern university",
-          "ai education",
-          "student organization",
-        ]}
-        url="/about"
-      />
-      <div className="min-h-screen bg-neutral-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
-              Meet Our Executive Board
-            </h1>
-            <p className="text-xl text-neutral-dark max-w-3xl mx-auto">
-              The passionate leaders driving innovation and building the future
-              of AI at Northeastern University
-            </p>
-          </motion.div>
+    <div className="min-h-screen bg-neutral-light py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
+            Meet Our Executive Board
+          </h1>
+          <p className="text-xl text-neutral-dark max-w-3xl mx-auto">
+            The passionate leaders driving innovation and building the future of
+            AI at Northeastern University
+          </p>
+        </motion.div>
 
-          {/* Executive Grid */}
-          <motion.div
-            ref={ref}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {executives.map((executive, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{
-                  y: -8,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >
-                <Card className="text-center h-full">
-                  {/* Profile Image */}
-                  <div className="w-24 h-24 mx-auto mb-6">
-                    <img
-                      src={executive.image}
-                      alt={executive.name}
-                      className="w-full h-full rounded-full object-cover border-4 border-coral"
+        {/* Executive Grid */}
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {executives.map((executive, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{
+                y: -8,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <Card className="text-center h-full">
+                {/* Profile Image */}
+                <div className="w-24 h-24 mx-auto mb-6">
+                  <img
+                    src={executive.image}
+                    alt={executive.name}
+                    className="w-full h-full rounded-full object-cover border-4 border-coral"
+                  />
+                </div>
+
+                {/* Name and Title */}
+                <h3 className="text-xl font-semibold text-charcoal mb-2">
+                  {executive.name}
+                </h3>
+                <p className="text-coral font-medium mb-3">{executive.title}</p>
+
+                {/* Badge */}
+                {executive.badge && (
+                  <div className="mb-4">
+                    <Badge
+                      text={executive.badge.text}
+                      type={executive.badge.type}
                     />
                   </div>
+                )}
 
-                  {/* Name and Title */}
-                  <h3 className="text-xl font-semibold text-charcoal mb-2">
-                    {executive.name}
-                  </h3>
-                  <p className="text-coral font-medium mb-3">
-                    {executive.title}
-                  </p>
+                {/* Bio */}
+                <p className="text-neutral-dark mb-6 leading-relaxed">
+                  {executive.bio}
+                </p>
 
-                  {/* Badge */}
-                  {executive.badge && (
-                    <div className="mb-4">
-                      <Badge
-                        text={executive.badge.text}
-                        type={executive.badge.type}
-                      />
-                    </div>
-                  )}
+                {/* Social Links */}
+                <div className="flex justify-center space-x-4">
+                  {Object.entries(executive.socials).map(([type, url]) => (
+                    <SocialIcon key={type} type={type} url={url} />
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
 
-                  {/* Bio */}
-                  <p className="text-neutral-dark mb-6 leading-relaxed">
-                    {executive.bio}
-                  </p>
-
-                  {/* Social Links */}
-                  <div className="flex justify-center space-x-4">
-                    {Object.entries(executive.socials).map(([type, url]) => (
-                      <SocialIcon key={type} type={type} url={url} />
-                    ))}
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Mission Statement */}
-          <motion.div
-            className="mt-20 text-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, threshold: 0.1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Card className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-6">
-                Our Mission
-              </h2>
-              <p className="text-lg text-neutral-dark leading-relaxed">
-                We believe that everyone can build with AI. Our mission is to
-                democratize access to AI technology, foster a community of
-                passionate builders, and create opportunities for students to
-                learn, innovate, and grow together. Through workshops,
-                hackathons, and industry partnerships, we're building the future
-                of AI education at Northeastern University.
-              </p>
-            </Card>
-          </motion.div>
-        </div>
+        {/* Mission Statement */}
+        <motion.div
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, threshold: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Card className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-6">
+              Our Mission
+            </h2>
+            <p className="text-lg text-neutral-dark leading-relaxed">
+              We believe that everyone can build with AI. Our mission is to
+              democratize access to AI technology, foster a community of
+              passionate builders, and create opportunities for students to
+              learn, innovate, and grow together. Through workshops, hackathons,
+              and industry partnerships, we're building the future of AI
+              education at Northeastern University.
+            </p>
+          </Card>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 
