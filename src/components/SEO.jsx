@@ -143,7 +143,7 @@ const SEO = ({
               },
               description:
                 "Join the Claude Builder Club at Northeastern University. Learn AI, build with Claude Pro, and connect with passionate students.",
-              foundingDate: "2024",
+              foundingDate: "2025",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Boston",
