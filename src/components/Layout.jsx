@@ -29,6 +29,7 @@ const Layout = ({ children }) => {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
+    { path: "/workshops", label: "Workshops" },
     { path: "/join", label: "Join Us" },
   ];
 
@@ -57,7 +58,7 @@ const Layout = ({ children }) => {
 
             {/* Navigation */}
             <nav className="hidden md:flex space-x-8">
-              {navItems.slice(0, 2).map((item) => (
+              {navItems.slice(0, 3).map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
