@@ -1,39 +1,22 @@
-import { motion } from "framer-motion";
-import workshopCalendar from "../assets/workshop_calendar.png";
-import workshopProgramming from "../assets/workshop_programming.png";
+import WorkshopCard from "../components/WorkshopCard";
+import { EVENTS } from "../lib/events";
 
-const Workshops = () => {
+const Events = () => {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#e3dacc" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="space-y-6">
-            <motion.img
-              src={workshopCalendar}
-              alt="Workshop Calendar"
-              className="w-full "
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            />
+    <div className="min-h-screen bg-[#e8e2d6] py-24 px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center mb-16">
+          <h1 className="text-6xl font-serif tracking-tight text-[#1a1a1a]">Workshop calendar</h1>
+        </div>
 
-            <motion.img
-              src={workshopProgramming}
-              alt="Workshop Programming"
-              className="w-full"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            />
-          </div>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {EVENTS.map((event, index) => (
+            <WorkshopCard key={index} event={event} />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Workshops;
+export default Events;
