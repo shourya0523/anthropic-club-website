@@ -9,22 +9,27 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import LoadingScreen from "../components/LoadingScreen";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // Check if loading animation has been shown this session
+  const hasShownLoading = sessionStorage.getItem('hasShownLoading');
+  const [isLoading, setIsLoading] = useState(!hasShownLoading);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
 
   useEffect(() => {
-    // Start the dropdown animation after 2 seconds
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    if (isLoading) {
+      // Start the dropdown animation after 2 seconds
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        // Mark that we've shown the loading animation this session
+        sessionStorage.setItem('hasShownLoading', 'true');
+      }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Removed mouse parallax and grid background per design update
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
 
   const benefits = [
     {
@@ -34,7 +39,7 @@ const Home = () => {
         "Learn directly from industry experts and cutting-edge research",
     },
     {
-      icon: "👥",
+      icon: "💥",
       title: "Connect with passionate students",
       description:
         "Join a community of like-minded AI enthusiasts and builders",
@@ -165,8 +170,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden" ref={containerRef}>
-      {/* Grid background removed for a softer look */}
-
       {/* Charcoal Particle System */}
       <Particles />
 
@@ -186,48 +189,14 @@ const Home = () => {
         />
       </div>
 
-      {/* Loading Overlay */}
+      {/* Loading Screen - Only shown once per session */}
       <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            className="fixed inset-0 z-50 bg-white flex items-center justify-center"
-            initial={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{
-              duration: 1.2,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <motion.h1
-                className="text-6xl md:text-8xl lg:text-9xl font-bold text-charcoal tracking-wider"
-                style={{ fontFamily: "Space Grotesk, sans-serif" }}
-                initial={{ letterSpacing: "0.1em" }}
-                animate={{ letterSpacing: "0.02em" }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                CLAUDE
-              </motion.h1>
-              <motion.h2
-                className="text-2xl md:text-4xl lg:text-5xl font-medium text-coral mt-4 tracking-widest"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                @ NEU
-              </motion.h2>
-            </motion.div>
-          </motion.div>
-        )}
+        {isLoading && <LoadingScreen />}
       </AnimatePresence>
 
       {/* Hero Section */}
       <motion.section
+        key="hero-section"
         className="relative bg-gradient-to-br from-coral to-coral/80 text-white py-20 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -391,6 +360,7 @@ const Home = () => {
 
       {/* Benefits Section */}
       <motion.section
+        key="benefits-section"
         className="py-20 bg-neutral-light relative"
         variants={containerVariants}
         initial="hidden"
@@ -501,6 +471,7 @@ const Home = () => {
 
       {/* CTA Section */}
       <motion.section
+        key="cta-section"
         className="py-20 bg-white relative"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

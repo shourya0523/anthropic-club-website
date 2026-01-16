@@ -7,6 +7,7 @@ const Badge = ({ text, type = "builder" }) => {
   const badgeStyles = {
     builder: "bg-gradient-to-r from-coral to-orange-400 text-white",
     campus: "bg-gradient-to-r from-blue-500 to-purple-600 text-white",
+    ai: "bg-gradient-to-r from-coral to-orange-400 text-white",
   };
 
   return (
@@ -105,7 +106,7 @@ const About = () => {
         >
           {EXECUTIVES.map((executive, index) => (
             <motion.div
-              key={index}
+              key={`exec-${index}-${executive.name}`}
               variants={itemVariants}
               whileHover={{
                 y: -8,
@@ -139,7 +140,7 @@ const About = () => {
 
                 <div className="flex justify-center space-x-4">
                   {Object.entries(executive.socials).map(([type, url]) => (
-                    <SocialIcon key={type} type={type} url={url} />
+                    <SocialIcon key={`${executive.name}-${type}`} type={type} url={url} />
                   ))}
                 </div>
               </Card>
