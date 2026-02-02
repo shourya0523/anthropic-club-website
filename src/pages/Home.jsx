@@ -12,7 +12,6 @@ import Card from "../components/Card";
 import LoadingScreen from "../components/LoadingScreen";
 
 const Home = () => {
-  // Check if loading animation has been shown this session
   const hasShownLoading = sessionStorage.getItem('hasShownLoading');
   const [isLoading, setIsLoading] = useState(!hasShownLoading);
   const containerRef = useRef(null);
@@ -20,10 +19,8 @@ const Home = () => {
 
   useEffect(() => {
     if (isLoading) {
-      // Start the dropdown animation after 2 seconds
       const timer = setTimeout(() => {
         setIsLoading(false);
-        // Mark that we've shown the loading animation this session
         sessionStorage.setItem('hasShownLoading', 'true');
       }, 2000);
 
@@ -72,7 +69,6 @@ const Home = () => {
     },
   };
 
-  // Particle system for charcoal dust effect
   const Particles = () => {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -101,7 +97,6 @@ const Home = () => {
     );
   };
 
-  // Animated line drawing component
   const AnimatedLine = ({ d, delay = 0, duration = 2 }) => {
     const pathLength = useMotionValue(0);
 
@@ -123,7 +118,6 @@ const Home = () => {
     );
   };
 
-  // Morphing geometric shapes
   const MorphingShape = ({ className, delay = 0 }) => {
     const morphVariants = {
       initial: {
@@ -170,10 +164,8 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden" ref={containerRef}>
-      {/* Charcoal Particle System */}
       <Particles />
 
-      {/* Morphing Shapes Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <MorphingShape
           className="absolute top-20 right-20 w-24 h-24"
@@ -189,12 +181,10 @@ const Home = () => {
         />
       </div>
 
-      {/* Loading Screen - Only shown once per session */}
       <AnimatePresence>
         {isLoading && <LoadingScreen />}
       </AnimatePresence>
 
-      {/* Hero Section */}
       <motion.section
         key="hero-section"
         className="relative bg-gradient-to-br from-coral to-coral/80 text-white py-20 overflow-hidden"
@@ -212,7 +202,6 @@ const Home = () => {
           ),
         }}
       >
-        {/* Animated Line Drawings */}
         <div className="absolute inset-0 overflow-hidden">
           <svg
             className="absolute top-10 right-10 w-32 h-32"
@@ -242,7 +231,6 @@ const Home = () => {
           </svg>
         </div>
 
-        {/* Enhanced Geometric Background Patterns */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full"
@@ -291,7 +279,6 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Enhanced text animation with letter-by-letter reveal */}
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             initial={{ opacity: 0 }}
@@ -358,7 +345,6 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Benefits Section */}
       <motion.section
         key="benefits-section"
         className="py-20 bg-neutral-light relative"
@@ -367,7 +353,6 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true, threshold: 0.1 }}
       >
-        {/* Section divider line */}
         <motion.div
           className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-charcoal/30 to-transparent"
           initial={{ scaleX: 0 }}
@@ -388,7 +373,6 @@ const Home = () => {
             </p>
           </motion.div>
 
-          {/* Featured Benefit Banner */}
           <motion.div
             className="mb-16 max-w-4xl mx-auto"
             variants={itemVariants}
@@ -409,11 +393,11 @@ const Home = () => {
                 </motion.div>
 
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  FREE Claude Pro + $50 API Credits
+                  FREE Claude Pro + $25 API Credits
                 </h3>
 
                 <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                  Unlock the full power of Claude Pro and receive $50 in API
+                  Unlock the full power of Claude Pro and receive $25 in API
                   credits to bring your AI projects to life
                 </p>
 
@@ -469,7 +453,6 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* CTA Section */}
       <motion.section
         key="cta-section"
         className="py-20 bg-white relative"
@@ -478,7 +461,6 @@ const Home = () => {
         viewport={{ once: true, threshold: 0.1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Section divider line */}
         <motion.div
           className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-charcoal/20 to-transparent"
           initial={{ scaleX: 0 }}
