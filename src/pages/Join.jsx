@@ -1,118 +1,71 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 
 const Join = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    year: "",
-    nuid: "",
-    email: "",
-    interestingThings: ""
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [iframeError, setIframeError] = useState(false);
 
-  const N8N_WEBHOOK_URL = "";
+  // Google Form URL - Replace with your actual form URL
+  const googleFormUrl =
+    "https://docs.google.com/forms/d/e/1FAIpQLSexyQmwKJfnUdZou6_6o3bC4kH-ieS95pjV_9W-X3C0JLbjJw/viewform?embedded=true;";
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  useEffect(() => {
+    // Simulate iframe loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleIframeLoad = () => {
+    setIsLoading(false);
   };
 
-  const handleSubmit = async () => {
-    if (!formData.fullName || !formData.year || !formData.nuid || !formData.email || !formData.interestingThings) {
-      setSubmitStatus("error");
-      return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch(N8N_WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          fullName: "",
-          year: "",
-          nuid: "",
-          email: "",
-          interestingThings: ""
-        });
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+  const handleIframeError = () => {
+    setIsLoading(false);
+    setIframeError(true);
   };
 
   return (
     <div className="min-h-screen bg-neutral-light py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
-            Claude Builder Club Application
+            Ready to Build with AI?
           </h1>
-          <div className="max-w-3xl mx-auto text-left bg-white rounded-2xl p-8 shadow-md">
-            <p className="text-lg text-neutral-dark leading-relaxed mb-4">
-              Are you new to AI? A veteran coder? This club is for you, everyone is a builder with AI.
-            </p>
-            <p className="text-base text-neutral-dark leading-relaxed mb-4">
-              Join our community of curious minds exploring the possibilities of AI development and collaboration. Whether you're taking your first steps into artificial intelligence or you're an experienced developer looking to expand your toolkit, the Claude Builder Club offers:
-            </p>
-            <ul className="space-y-2 text-neutral-dark">
-              <li className="flex items-start">
-                <span className="text-coral mr-2 mt-1">•</span>
-                <span>Free Claude Pro Account & API Credits to build and experiment with AI</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-coral mr-2 mt-1">•</span>
-                <span>Access to Anthropic-led workshops, panels & lectures featuring cutting-edge insights</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-coral mr-2 mt-1">•</span>
-                <span>Connection with fellow students who share your passion for innovation and learning</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-coral mr-2 mt-1">•</span>
-                <span>Exclusive hackathons with access to merchandise, prizes, and unique opportunities</span>
-              </li>
-            </ul>
-          </div>
+          <p className="text-xl text-neutral-dark max-w-2xl mx-auto">
+            Join the Anthropic Club and start your AI journey. Fill out the form
+            below to become a member.
+          </p>
         </motion.div>
 
+        {/* Form Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <Card className="p-8">
-            {submitStatus === "success" ? (
+            {isLoading && (
               <div className="text-center py-12">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-coral mb-4"></div>
+                <p className="text-neutral-dark">Loading application form...</p>
+              </div>
+            )}
+
+            {iframeError ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
-                    className="w-8 h-8 text-green-600"
+                    className="w-8 h-8 text-red-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -121,136 +74,79 @@ const Join = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M5 13l4 4L19 7"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-charcoal mb-2">
-                  Welcome to the Club! 🎉
+                <h3 className="text-xl font-semibold text-charcoal mb-2">
+                  Form Loading Error
                 </h3>
                 <p className="text-neutral-dark mb-6">
-                  Your application has been submitted successfully. We'll be in touch soon!
+                  We're having trouble loading the application form. Please try
+                  the direct link below.
                 </p>
-                <button
-                  onClick={() => setSubmitStatus(null)}
-                  className="px-6 py-3 bg-coral text-white rounded-lg font-medium hover:bg-coral/90 transition-colors duration-200"
+                <a
+                  href={googleFormUrl.replace("?embedded=true", "")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-coral text-white rounded-lg font-medium hover:bg-coral/90 transition-colors duration-200"
                 >
-                  Submit Another Application
-                </button>
+                  Open Application Form
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
               </div>
             ) : (
-              <div className="space-y-6">
-                <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-charcoal mb-2">
-                    Full Name <span className="text-coral">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-neutral-light rounded-lg focus:border-coral focus:outline-none transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="year" className="block text-sm font-medium text-charcoal mb-2">
-                    What year are you? <span className="text-coral">*</span>
-                  </label>
-                  <select
-                    id="year"
-                    name="year"
-                    value={formData.year}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-neutral-light rounded-lg focus:border-coral focus:outline-none transition-colors"
+              <div className="relative">
+                {/* Form Container */}
+                <div className="relative w-full bg-white rounded-lg border-2 border-coral/20 shadow-lg overflow-hidden">
+                  <iframe
+                    src={googleFormUrl}
+                    width="100%"
+                    height="800"
+                    frameBorder="0"
+                    marginHeight="0"
+                    marginWidth="0"
+                    onLoad={handleIframeLoad}
+                    onError={handleIframeError}
+                    className="w-full"
+                    title="Anthropic Club Application Form"
                   >
-                    <option value="">Select year</option>
-                    <option value="First Year">First Year</option>
-                    <option value="Second Year">Second Year</option>
-                    <option value="Third Year">Third Year</option>
-                    <option value="Fourth Year">Fourth Year</option>
-                    <option value="Fifth Year+">Fifth Year+</option>
-                    <option value="Graduate">Graduate</option>
-                  </select>
+                    Loading…
+                  </iframe>
                 </div>
 
-                <div>
-                  <label htmlFor="nuid" className="block text-sm font-medium text-charcoal mb-2">
-                    NUID (Northeastern ID) <span className="text-coral">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="nuid"
-                    name="nuid"
-                    value={formData.nuid}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-neutral-light rounded-lg focus:border-coral focus:outline-none transition-colors"
-                    placeholder="00123456"
-                    maxLength="8"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-2">
-                    Northeastern Email Address <span className="text-coral">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-neutral-light rounded-lg focus:border-coral focus:outline-none transition-colors"
-                    placeholder="doe.j@northeastern.edu"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="interestingThings" className="block text-sm font-medium text-charcoal mb-2">
-                    Tell us 3 interesting things about you <span className="text-coral">*</span>
-                  </label>
-                  <textarea
-                    id="interestingThings"
-                    name="interestingThings"
-                    value={formData.interestingThings}
-                    onChange={handleChange}
-                    rows={6}
-                    className="w-full px-4 py-3 border-2 border-neutral-light rounded-lg focus:border-coral focus:outline-none transition-colors"
-                    placeholder="1. I love building web applications...&#10;2. I'm learning machine learning...&#10;3. I enjoy contributing to open source projects..."
-                  />
-                </div>
-
-                {submitStatus === "error" && (
-                  <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg">
-                    <p className="text-red-600 text-sm">
-                      There was an error submitting your application. Please make sure all required fields are filled out and try again.
-                    </p>
-                  </div>
-                )}
-
-                <div className="pt-4">
-                  <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
-                    className="w-full px-6 py-4 bg-coral text-white rounded-lg font-medium hover:bg-coral/90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Submitting...
-                      </>
-                    ) : (
-                      "Submit Application"
-                    )}
-                  </button>
+                {/* Form Instructions */}
+                <div className="mt-6 text-center">
+                  <p className="text-sm text-neutral-dark">
+                    Having trouble with the form?{" "}
+                    <a
+                      href={googleFormUrl.replace("?embedded=true", "")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-coral hover:underline"
+                    >
+                      Open in new tab
+                    </a>
+                  </p>
                 </div>
               </div>
             )}
           </Card>
         </motion.div>
 
+        {/* Additional Information */}
         <motion.div
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 50 }}
@@ -331,6 +227,7 @@ const Join = () => {
           </Card>
         </motion.div>
 
+        {/* Contact Information */}
         <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 50 }}
