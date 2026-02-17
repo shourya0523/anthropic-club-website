@@ -17,16 +17,29 @@ const Workshops = () => {
           </h1>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {EVENTS.map((event, index) => (
-            <WorkshopCard key={`event-${index}-${event.title}`} event={event} />
-          ))}
-        </motion.div>
+        {EVENTS.length === 0 ? (
+          <div className="flex justify-center items-center h-96">
+            <motion.p
+              className="text-3xl font-semibold text-gray-700"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              NO EVENTS SCHEDULED YET!
+            </motion.p>
+          </div>
+        ) : (
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {EVENTS.map((event, index) => (
+              <WorkshopCard key={`event-${index}-${event.title}`} event={event} />
+            ))}
+          </motion.div>
+        )}
       </div>
     </div>
   );

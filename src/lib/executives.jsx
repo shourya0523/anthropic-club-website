@@ -1,11 +1,17 @@
 import tarikaImage from "../assets/pictures/tarika_selvaraj.jpeg";
-import shouryaImage from "../assets/pictures/shourya_yadav.png";
+import shouryaImage from "../assets/pictures/shourya_yadav.jpg";
 import smyanImage from "../assets/pictures/smyan_sengupta.jpg";
 import aaronImage from "../assets/pictures/aaron_devades.jpg";
-import matthewImage from "../assets/pictures/matthew_shi.jpg";
-import sohumImage from "../assets/pictures/sohum_balsara.jpg";
-import danielImage from "../assets/pictures/daniel_zeng.jpg";
 import alexanderImage from "../assets/pictures/alexander_mcgreevy.jpeg";
+import hamzaImage from "../assets/pictures/hamza_bohra.jpg"
+import sohumImage from "../assets/pictures/sohum_balsara.jpg";
+import shivenImage from "../assets/pictures/shiven_mishra.jpg"
+import jobImage from "../assets/pictures/job_vengalil.jpg"
+import mohammedImage from "../assets/pictures/mohammed_mutahar.jpg"
+import dhamodaranImage from "../assets/pictures/dhamodaran_selvam.jpg"
+import mehrImage from "../assets/pictures/mehr_anand.jpg"
+import dharanaImage from "../assets/pictures/dharana_alilaikann.jpg"
+import martyImage from "../assets/pictures/marty_dharma.jpg"
 
 export const EXECUTIVES = [
   {
@@ -57,19 +63,10 @@ export const EXECUTIVES = [
     },
   },
   {
-    name: "Daniel Zeng",
-    title: "Director of Outreach",
-    bio: "Procurement Data Analyst @ MBTA | DS @ Northeastern University",
-    image: danielImage,
-    socials: {
-      linkedin: "https://www.linkedin.com/in/danielzengneu/",
-    },
-  },
-  {
     name: "Hamza Bohra",
     title: "Secretary",
     bio: "Prev. Financial Analyst @ PerioView | Mathematics + Economics @ Northeastern University",
-    image: "zachImage",
+    image: hamzaImage,
     socials: {
       linkedin: "https://www.linkedin.com/in/zachary-blum-a15663242/",
     },
@@ -86,30 +83,28 @@ export const EXECUTIVES = [
     },
   },
   {
-    name: "Matthew Shi",
-    title: "Head of Software",
-    bio: " Software Engineer @ ZOR! & ACM/AIR Health | CS + Media Arts @ Northeastern University",
-    image: matthewImage,
-    socials: {
-      linkedin: "https://www.linkedin.com/in/shi-matt",
-      github: "https://github.com/matte-realize",
-      portfolio: "https://mattesk.com/"
-    },
-  },
-  {
     name: "Shiven Mishra",
-    title: "Head of Builder Program",
+    title: "Head of Builder Program + Outreach",
     bio: "Real Estate Finance @ Eastdil Secured | Finance + Fintech @ Northeastern University",
-    image: "shivenImage",
+    image: shivenImage,
     socials: {
         linkedin: "https://www.linkedin.com/in/shiven-mishra-748285315/"
     }
   },
-    {
+  {
+    name: "Job Vengalil",
+    title: "Head of Outreach",
+    bio: "Prev. IT @ Vineyard Offshore & Data Engineer @ Leidos | CS + AI @ Northeastern Univeristy",
+    image: jobImage,
+    socials: {
+      linkedin: ""
+    },
+  },
+  {
     name: "Mohammed Mutahar",
     title: "Graduate Student Ambassador",
     bio: "Prev. AI Engineer @ Reap Studio | MS CS @ Northeastern University",
-    image: "mohammedImage",
+    image: mohammedImage,
     socials: {
         linkedin: "https://www.linkedin.com/in/mohammed-mutahar-695b6a221/"
     },
@@ -118,9 +113,41 @@ export const EXECUTIVES = [
     name: "Dhamodaran Selvam",
     title: "Graduate Student Ambassador",
     bio: "Prev. Machine Learning @ Phot.AI | MS AI @ Northeastern University",
-    image: "dhamodaranImage",
+    image: dhamodaranImage,
     socials: {
         linkedin: "https://www.linkedin.com/in/dhamo85/"
+    }
+  },
+    {
+    name: "Mehr Anand",
+    title: "Claude Builder Ambassador",
+    badge: { text: "Claude Builder Ambassador", type: "builder" },
+    bio: "Incoming Data Managmenet @ General Atlantic | Prev. Financial ML Engineer @ Brewstar",
+    image: mehrImage,
+    socials: {
+        linkedin: "https://www.linkedin.com/in/mehr-anand",
+        github: "https://github.com/mesanand",
+        portfolio: "https://mesanand.github.io/"
+    },
+  },
+  {
+    name: "Dharana Alilaikannan",
+    title: "Claude Campus Ambassador",
+    badge: { text: "Claude Campus Ambassador", type: "campus" },
+    bio: "Prev. Software Engineer @ Zelle & Emerson | CS + AI @ Northeastern Univeersity",
+    image: dharanaImage,
+    socials: {
+        linkedin: "https://www.linkedin.com/in/dharana-alilaikannan/"
+    }
+  },
+  {
+    name: "Amartya Dharma",
+    title: "Claude Campus Ambassador",
+    badge: { text: "Claude Campus Ambassador", type: "campus" },
+    bio: "Prev. Implementation Business Analyst @ State Street | CS + Finance @ Northeastern University",
+    image: martyImage,
+    socials: {
+      linkedin: "https://www.linkedin.com/in/amartya-dharma-423860145/"
     }
   },
 ];
